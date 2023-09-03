@@ -1,0 +1,28 @@
+# vscode
+.vscode
+build
+
+# visual studio
+.vs
+out
+CMakeSettings.json
+
+# clion
+cmake-build-debug
+cmake-build-release
+.idea
+
+# fleet
+.fleet
+
+*.dylib
+*.so
+*.a
+*.exe
+*.pdb
+*.o
+*.dll
+*.lib
+
+# 设计文档
+*.~$lock
