@@ -9,12 +9,20 @@ find_package(Qt5 COMPONENTS Core Widgets Gui Xml Multimedia Svg Network)
 target_sources(${PROJECT_NAME} PRIVATE
         core_global.h
 
+        util/colordictionary.h
+        util/filetype.h
         util/log.cpp
         util/log.h
         util/mathutils.h
         util/movemode.h
+        util/pencilerror.cpp
+        util/pencilerror.h
+        util/pencilsettings.cpp
+        util/pencilsettings.h
         miniz.cpp
-        miniz.h)
+        miniz.h
+        qminiz.cpp
+        qminiz.h)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
         Qt5::Core
