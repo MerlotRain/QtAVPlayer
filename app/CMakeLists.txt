@@ -9,6 +9,37 @@ target_sources(${PROJECT_NAME} PRIVATE
     pencil2d.cpp
     pencil2d.h)
 
+target_sources(${PROJECT_NAME} PRIVATE
+    ui/aboutdialog.ui
+    ui/bucketoptionswidget.ui
+    ui/cameraoptionswidget.ui
+    ui/camerapropertiesdialog.ui
+    ui/colorinspector.ui
+    ui/colorpalette.ui
+    ui/doubleprogressdialog.ui
+    ui/errordialog.ui
+    ui/exportimageoptions.ui
+    ui/exportmovieoptions.ui
+    ui/filespage.ui
+    ui/generalpage.ui
+    ui/importexportdialog.ui
+    ui/importimageseqoptions.ui
+    ui/importimageseqpreview.ui
+    ui/importlayersdialog.ui
+    ui/importpositiondialog.ui
+    ui/layeropacitydialog.ui
+    ui/mainwindow2.ui
+    ui/onionskin.ui
+    ui/pegbaralignmentdialog.ui
+    ui/preferencesdialog.ui
+    ui/presetdialog.ui
+    ui/repositionframesdialog.ui
+    ui/shortcutspage.ui
+    ui/timelinepage.ui
+    ui/toolboxwidget.ui
+    ui/tooloptions.ui
+    ui/toolspage.ui)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE
 Qt5::Core
 Qt5::Widgets
