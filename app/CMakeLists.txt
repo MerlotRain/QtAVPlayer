@@ -5,6 +5,8 @@ add_executable(${PROJECT_NAME})
 find_package(Qt5 COMPONENTS Core Widgets Gui Xml Multimedia Svg Network)
 
 target_sources(${PROJECT_NAME} PRIVATE
+    aboutdialog.cpp
+    aboutdialog.h
     main.cpp
     pencil2d.cpp
     pencil2d.h)
