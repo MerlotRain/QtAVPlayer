@@ -30,6 +30,23 @@ private:
         Wheel,
         Triangle
     };
+
+    void createImages(QSizeF size);
+    void createWheel();
+    void createTriangle();
+    void setColorFromPos(QPointF pos);
+
+private:
+    bool m_IsDragging = false;
+    int mM_argin = 4;
+    int m_WheelThickness = 18;
+    ControlPart m_ClickedPart = ColorWheel::None;
+    QImage m_WheelImage;
+    QImage m_TriangleImage;
+    QImage m_WidgetImage;
+    bool m_WheelDirty = true;
+    bool m_TriangleDirty = true;
+    QBrush m_WheelBrush;
 };
 
 
