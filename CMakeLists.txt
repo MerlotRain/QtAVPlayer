@@ -12,6 +12,7 @@ target_sources(${PROJECT_NAME} PRIVATE
     app/color/colorbox.h
     app/color/colordialog.cpp
     app/color/colordialog.h
+    app/color/colordictionary.h
     app/color/colorpreviewwidget.cpp
     app/color/colorpreviewwidget.h
     app/color/colorrampwidget.cpp
@@ -27,11 +28,25 @@ target_sources(${PROJECT_NAME} PRIVATE
     app/color/colorwidgetaction.cpp
     app/color/colorwidgetaction.h
     app/aboutdialog.cpp
+    app/aboutdialog.h
+    app/fontbar.cpp
+    app/fontbar.h
+    app/frameruler.cpp
+    app/frameruler.h
     app/main.cpp
     app/mainwindow.cpp
     app/mainwindow.h
     app/pencil.cpp
     app/pencil.h
+    
+    core/log.cpp
+    core/log.h
+    core/pencilscene.cpp
+    core/pencilscene.h
+    core/pencilview.cpp
+    core/pencilview.h
+    core/transfrom.cpp
+    core/transfrom.h
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
