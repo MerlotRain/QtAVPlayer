@@ -36,8 +36,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     app/main.cpp
     app/mainwindow.cpp
     app/mainwindow.h
-    app/pencil.cpp
-    app/pencil.h
+    app/pencilapplication.cpp
+    app/pencilapplication.h
     
     core/log.cpp
     core/log.h
