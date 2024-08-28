@@ -1,7 +1,5 @@
-# qdesktop utilities
+# QtAVPlayer
 
----
+QtAVPlayer is based on [QtAVPlayer](https://www.github/valbok/QtAVPlayer.git) create and implement Qt video player.
 
-Provide basic functions in the development process of QT desktop programs, which usually correspond to some framework and module design schemes.
-
-Of course, this is just a problem-solving approach and not entirely transferable to your project code.
+For better compilation and application, the original libraries will be organized in the form of CMake.
