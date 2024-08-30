@@ -23,10 +23,10 @@
 #include "qavvideooutputfilter_p.h"
 #include "qavaudioinputfilter_p.h"
 #include "qavaudiooutputfilter_p.h"
-#include <QtAVPlayer/qtavplayerglobal.h>
-#include <QtAVPlayer/qavframe.h>
-#include <QtAVPlayer/qavvideoframe.h>
-#include <QtAVPlayer/qavaudioframe.h>
+#include <qtavplayerglobal.h>
+#include <qavframe.h>
+#include <qavvideoframe.h>
+#include <qavaudioframe.h>
 #include <QMutex>
 #include <memory>
 

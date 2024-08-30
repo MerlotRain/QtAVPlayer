@@ -8,8 +8,8 @@
 #ifndef QAVAUDIOOUTPUTDEVICE_H
 #define QAVAUDIOOUTPUTDEVICE_H
 
-#include <QtAVPlayer/qavaudioframe.h>
-#include <QtAVPlayer/qtavplayerglobal.h>
+#include <qavaudioframe.h>
+#include <qtavplayerglobal.h>
 #include <QIODevice>
 #include <memory>
 

@@ -8,11 +8,11 @@
 #ifndef QAVPLAYER_H
 #define QAVPLAYER_H
 
-#include <QtAVPlayer/qavvideoframe.h>
-#include <QtAVPlayer/qavaudioframe.h>
-#include <QtAVPlayer/qavsubtitleframe.h>
-#include <QtAVPlayer/qavstream.h>
-#include <QtAVPlayer/qtavplayerglobal.h>
+#include <qavvideoframe.h>
+#include <qavaudioframe.h>
+#include <qavsubtitleframe.h>
+#include <qavstream.h>
+#include <qtavplayerglobal.h>
 #include <QString>
 #include <memory>
 

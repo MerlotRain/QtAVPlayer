@@ -1,112 +1,90 @@
-if(NOT QT_AVPLAYER_DIR)
-    set(QT_AVPLAYER_DIR ${CMAKE_SOURCE_DIR})
-endif()
-
 option(QT_AVPLAYER_MULTIMEDIA "Enable QtMultimedia" OFF)
 option(QT_AVPLAYER_VA_X11 "Enable libva-x11" OFF)
 option(QT_AVPLAYER_VA_DRM "Enable libva-drm" OFF)
 option(QT_AVPLAYER_VDPAU "Enable vdpau" OFF)
 
-find_library(AVDEVICE_LIBRARY REQUIRED NAMES avdevice)
-find_library(AVCODEC_LIBRARY REQUIRED NAMES avcodec)
-find_library(AVFILTER_LIBRARY REQUIRED NAMES avfilter)
-find_library(AVFORMAT_LIBRARY REQUIRED NAMES avformat)
-find_library(AVUTIL_LIBRARY REQUIRED NAMES avutil)
-find_library(SWRESAMPLE_LIBRARY REQUIRED NAMES swresample)
-find_library(SWSCALE_LIBRARY REQUIRED NAMES swscale)
-
-set(QtAVPlayer_LIBS 
-    ${AVDEVICE_LIBRARY}
-    ${AVFILTER_LIBRARY}
-    ${AVCODEC_LIBRARY}
-    ${AVFORMAT_LIBRARY}
-    ${AVUTIL_LIBRARY}
-    ${SWRESAMPLE_LIBRARY}
-    ${SWSCALE_LIBRARY}
-)
-
 set(QtAVPlayer_PRIVATE_HEADERS
-    ${QT_AVPLAYER_DIR}/qavcodec_p.h
-    ${QT_AVPLAYER_DIR}/qavcodec_p_p.h
-    ${QT_AVPLAYER_DIR}/qavframecodec_p.h
-    ${QT_AVPLAYER_DIR}/qavaudiocodec_p.h
-    ${QT_AVPLAYER_DIR}/qavvideocodec_p.h
-    ${QT_AVPLAYER_DIR}/qavsubtitlecodec_p.h
-    ${QT_AVPLAYER_DIR}/qavhwdevice_p.h
-    ${QT_AVPLAYER_DIR}/qavdemuxer_p.h
-    ${QT_AVPLAYER_DIR}/qavpacket_p.h
-    ${QT_AVPLAYER_DIR}/qavstreamframe_p.h
-    ${QT_AVPLAYER_DIR}/qavframe_p.h
-    ${QT_AVPLAYER_DIR}/qavpacketqueue_p.h
-    ${QT_AVPLAYER_DIR}/qavvideobuffer_p.h
-    ${QT_AVPLAYER_DIR}/qavvideobuffer_cpu_p.h
-    ${QT_AVPLAYER_DIR}/qavvideobuffer_gpu_p.h
-    ${QT_AVPLAYER_DIR}/qavfilter_p.h
-    ${QT_AVPLAYER_DIR}/qavfilter_p_p.h
-    ${QT_AVPLAYER_DIR}/qavvideofilter_p.h
-    ${QT_AVPLAYER_DIR}/qavaudiofilter_p.h
-    ${QT_AVPLAYER_DIR}/qavfiltergraph_p.h
-    ${QT_AVPLAYER_DIR}/qavinoutfilter_p.h
-    ${QT_AVPLAYER_DIR}/qavinoutfilter_p_p.h
-    ${QT_AVPLAYER_DIR}/qavvideoinputfilter_p.h
-    ${QT_AVPLAYER_DIR}/qavaudioinputfilter_p.h
-    ${QT_AVPLAYER_DIR}/qavvideooutputfilter_p.h
-    ${QT_AVPLAYER_DIR}/qavaudiooutputfilter_p.h
-    ${QT_AVPLAYER_DIR}/qavfilters_p.h
+    qavcodec_p.h
+    qavcodec_p_p.h
+    qavframecodec_p.h
+    qavaudiocodec_p.h
+    qavvideocodec_p.h
+    qavsubtitlecodec_p.h
+    qavhwdevice_p.h
+    qavdemuxer_p.h
+    qavpacket_p.h
+    qavstreamframe_p.h
+    qavframe_p.h
+    qavpacketqueue_p.h
+    qavvideobuffer_p.h
+    qavvideobuffer_cpu_p.h
+    qavvideobuffer_gpu_p.h
+    qavfilter_p.h
+    qavfilter_p_p.h
+    qavvideofilter_p.h
+    qavaudiofilter_p.h
+    qavfiltergraph_p.h
+    qavinoutfilter_p.h
+    qavinoutfilter_p_p.h
+    qavvideoinputfilter_p.h
+    qavaudioinputfilter_p.h
+    qavvideooutputfilter_p.h
+    qavaudiooutputfilter_p.h
+    qavfilters_p.h
 )
 
 set(QtAVPlayer_PUBLIC_HEADERS
-    ${QT_AVPLAYER_DIR}/qaviodevice.h
-    ${QT_AVPLAYER_DIR}/qavaudioformat.h
-    ${QT_AVPLAYER_DIR}/qavstreamframe.h
-    ${QT_AVPLAYER_DIR}/qavframe.h
-    ${QT_AVPLAYER_DIR}/qavvideoframe.h
-    ${QT_AVPLAYER_DIR}/qavaudioframe.h
-    ${QT_AVPLAYER_DIR}/qavsubtitleframe.h
-    ${QT_AVPLAYER_DIR}/qtavplayerglobal.h
-    ${QT_AVPLAYER_DIR}/qavstream.h
-    ${QT_AVPLAYER_DIR}/qavplayer.h
+    qaviodevice.h
+    qavaudioformat.h
+    qavstreamframe.h
+    qavframe.h
+    qavvideoframe.h
+    qavaudioframe.h
+    qavsubtitleframe.h
+    qtavplayerglobal.h
+    qavstream.h
+    qavplayer.h
 )
 
 set(QtAVPlayer_SOURCES
-    ${QT_AVPLAYER_DIR}/qavplayer.cpp
-    ${QT_AVPLAYER_DIR}/qavcodec.cpp
-    ${QT_AVPLAYER_DIR}/qavframecodec.cpp
-    ${QT_AVPLAYER_DIR}/qavaudiocodec.cpp
-    ${QT_AVPLAYER_DIR}/qavvideocodec.cpp
-    ${QT_AVPLAYER_DIR}/qavsubtitlecodec.cpp
-    ${QT_AVPLAYER_DIR}/qavdemuxer.cpp
-    ${QT_AVPLAYER_DIR}/qavpacket.cpp
-    ${QT_AVPLAYER_DIR}/qavframe.cpp
-    ${QT_AVPLAYER_DIR}/qavstreamframe.cpp
-    ${QT_AVPLAYER_DIR}/qavvideoframe.cpp
-    ${QT_AVPLAYER_DIR}/qavaudioframe.cpp
-    ${QT_AVPLAYER_DIR}/qavsubtitleframe.cpp
-    ${QT_AVPLAYER_DIR}/qavvideobuffer_cpu.cpp
-    ${QT_AVPLAYER_DIR}/qavvideobuffer_gpu.cpp
-    ${QT_AVPLAYER_DIR}/qavfilter.cpp
-    ${QT_AVPLAYER_DIR}/qavvideofilter.cpp
-    ${QT_AVPLAYER_DIR}/qavaudiofilter.cpp
-    ${QT_AVPLAYER_DIR}/qavfiltergraph.cpp
-    ${QT_AVPLAYER_DIR}/qavinoutfilter.cpp
-    ${QT_AVPLAYER_DIR}/qavvideoinputfilter.cpp
-    ${QT_AVPLAYER_DIR}/qavaudioinputfilter.cpp
-    ${QT_AVPLAYER_DIR}/qavvideooutputfilter.cpp
-    ${QT_AVPLAYER_DIR}/qavaudiooutputfilter.cpp
-    ${QT_AVPLAYER_DIR}/qaviodevice.cpp
-    ${QT_AVPLAYER_DIR}/qavstream.cpp
-    ${QT_AVPLAYER_DIR}/qavfilters.cpp
+    qavplayer.cpp
+    qavcodec.cpp
+    qavframecodec.cpp
+    qavaudiocodec.cpp
+    qavvideocodec.cpp
+    qavsubtitlecodec.cpp
+    qavdemuxer.cpp
+    qavpacket.cpp
+    qavframe.cpp
+    qavstreamframe.cpp
+    qavvideoframe.cpp
+    qavaudioframe.cpp
+    qavsubtitleframe.cpp
+    qavvideobuffer_cpu.cpp
+    qavvideobuffer_gpu.cpp
+    qavfilter.cpp
+    qavvideofilter.cpp
+    qavaudiofilter.cpp
+    qavfiltergraph.cpp
+    qavinoutfilter.cpp
+    qavvideoinputfilter.cpp
+    qavaudioinputfilter.cpp
+    qavvideooutputfilter.cpp
+    qavaudiooutputfilter.cpp
+    qaviodevice.cpp
+    qavstream.cpp
+    qavfilters.cpp
 )
 
 if(WIN32)
     set(QtAVPlayer_PRIVATE_HEADERS
         ${QtAVPlayer_PRIVATE_HEADERS}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_d3d11_p.h
+        qavhwdevice_d3d11_p.h
     )
 
     set(QtAVPlayer_SOURCES
         ${QtAVPlayer_SOURCES}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_d3d11.cpp
+        qavhwdevice_d3d11.cpp
     )
 endif()
 
@@ -119,7 +97,7 @@ if(APPLE)
 
     set(QtAVPlayer_SOURCES
         ${QtAVPlayer_SOURCES}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_videotoolbox.mm
+        qavhwdevice_videotoolbox.mm
     )
 
     set(QtAVPlayer_LIBS
@@ -135,8 +113,8 @@ endif()
 if(ANDROID)
     set(QtAVPlayer_SOURCES
         ${QtAVPlayer_SOURCES}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_mediacodec.cpp
-        ${QT_AVPLAYER_DIR}/qavandroidsurfacetexture.cpp
+        qavhwdevice_mediacodec.cpp
+        qavandroidsurfacetexture.cpp
     )
 endif()
 
@@ -146,14 +124,14 @@ if(QT_AVPLAYER_MULTIMEDIA)
 
     set(QtAVPlayer_PUBLIC_HEADERS
         ${QtAVPlayer_PUBLIC_HEADERS}
-        ${QT_AVPLAYER_DIR}/qavaudiooutput.h
-        ${QT_AVPLAYER_DIR}/qavaudiooutputdevice.h
+        qavaudiooutput.h
+        qavaudiooutputdevice.h
     )
 
     set(QtAVPlayer_SOURCES
         ${QtAVPlayer_SOURCES}
-        ${QT_AVPLAYER_DIR}/qavaudiooutput.cpp
-        ${QT_AVPLAYER_DIR}/qavaudiooutputdevice.cpp
+        qavaudiooutput.cpp
+        qavaudiooutputdevice.cpp
     )
 endif()
 
@@ -171,12 +149,12 @@ if(QT_AVPLAYER_VA_X11)
 
     set(QtAVPlayer_PRIVATE_HEADERS
         ${QtAVPlayer_PRIVATE_HEADERS}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_vaapi_x11_glx_p.h
+        qavhwdevice_vaapi_x11_glx_p.h
     )
 
     set(QtAVPlayer_SOURCES
         ${QtAVPlayer_SOURCES}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_vaapi_x11_glx.cpp
+        qavhwdevice_vaapi_x11_glx.cpp
     )
 endif()
 
@@ -221,12 +199,12 @@ if(QT_AVPLAYER_VA_DRM)
 
     set(QtAVPlayer_PRIVATE_HEADERS
         ${QtAVPlayer_PRIVATE_HEADERS}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_vaapi_drm_egl_p.h
+        qavhwdevice_vaapi_drm_egl_p.h
     )
 
     set(QtAVPlayer_SOURCES
         ${QtAVPlayer_SOURCES}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_vaapi_drm_egl.cpp
+        qavhwdevice_vaapi_drm_egl.cpp
     )
 endif()
 
@@ -242,11 +220,33 @@ if(QT_AVPLAYER_VDPAU)
 
     set(QtAVPlayer_PRIVATE_HEADERS
         ${QtAVPlayer_PRIVATE_HEADERS}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_vdpau_p.h
+        qavhwdevice_vdpau_p.h
     )
 
     set(QtAVPlayer_SOURCES
         ${QtAVPlayer_SOURCES}
-        ${QT_AVPLAYER_DIR}/qavhwdevice_vdpau.cpp
+        qavhwdevice_vdpau.cpp
     )
 endif()
+
+
+add_library(QtAVPlayer STATIC
+    ${QtAVPlayer_SOURCES}
+    ${QtAVPlayer_PUBLIC_HEADERS}
+    ${QtAVPlayer_PRIVATE_HEADERS}
+)
+
+target_link_libraries(QtAVPlayer
+    ${QT_VERSION_BASE}::Core
+    ${QT_VERSION_BASE}::Gui
+    ${QT_VERSION_BASE}::Multimedia
+    ${QT_VERSION_BASE}::Network
+    ${QT_VERSION_BASE}::Widgets
+    ${FFMPEG_LIBRARIES}
+)
+
+target_include_directories(QtAVPlayer
+    PUBLIC
+    ${CMAKE_CURRENT_LIST_DIR}
+    ${FFMPEG_INCLUDE_DIRS}
+)

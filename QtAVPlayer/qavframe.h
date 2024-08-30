@@ -8,8 +8,8 @@
 #ifndef QAVFRAME_H
 #define QAVFRAME_H
 
-#include <QtAVPlayer/qtavplayerglobal.h>
-#include <QtAVPlayer/qavstreamframe.h>
+#include <qtavplayerglobal.h>
+#include <qavstreamframe.h>
 
 QT_BEGIN_NAMESPACE
 

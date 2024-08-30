@@ -19,9 +19,9 @@
 // We mean it.
 //
 
-#include <QtAVPlayer/qtavplayerglobal.h>
-#include <QtAVPlayer/qavframe.h>
-#include <QtAVPlayer/qavstream.h>
+#include <qtavplayerglobal.h>
+#include <qavframe.h>
+#include <qavstream.h>
 #include <memory>
 
 QT_BEGIN_NAMESPACE
