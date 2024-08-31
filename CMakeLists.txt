@@ -29,9 +29,32 @@ endif()
 
 find_package(${QT_VERSION_BASE} COMPONENTS Core Gui Widgets Multimedia Multimediawidgets REQUIRED)
 
+if(APPLE)
+    find_library(IOSURFACE_LIBRARY IOSurface)
+    find_library(COREVIDEO_LIBRARY CoreVideo)
+    find_library(COREMEDIA_LIBRARY CoreMedia)
+    find_library(METAL_LIBRARY Metal)
+    find_library(METAL_FOUNDATION Foundation)
+    set(QtAVPlayer_LIBS
+        ${QtAVPlayer_LIBS}
+        ${IOSURFACE_LIBRARY}
+        ${COREVIDEO_LIBRARY}
+        ${COREMEDIA_LIBRARY}
+        ${METAL_LIBRARY}
+        ${METAL_FOUNDATION}
+    )
+endif()
+
+add_definitions(-DQT_AVPLAYER_MULTIMEDIA)
 add_subdirectory(QtAVPlayer)
 
-add_executable(QtAV WIN32 main.cpp)
+add_executable(QtAV WIN32 main.cpp qtav.cpp qtav.h)
 target_link_libraries(QtAV 
     QtAVPlayer
+    ${FFMPEG_LIBRARIES}
+    ${QT_VERSION_BASE}::MultimediaWidgets
 )
+
+if(APPLE)
+        target_link_libraries(QtAV ${QtAVPlayer_LIBS})
+endif()

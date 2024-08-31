@@ -68,8 +68,6 @@ SpacesInSquareBrackets: false
 TabWidth: 4
 UseTab: Never
 AlignArrayOfStructures: Right
-AlignConsecutiveAssignments: false
 IndentCaseBlocks: true
 IndentExternBlock: Indent
-IndentPPDirectives: BeforeHash
 InsertBraces: false

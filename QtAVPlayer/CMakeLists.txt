@@ -89,24 +89,9 @@ if(WIN32)
 endif()
 
 if(APPLE)
-    find_library(IOSURFACE_LIBRARY IOSurface)
-    find_library(COREVIDEO_LIBRARY CoreVideo)
-    find_library(COREMEDIA_LIBRARY CoreMedia)
-    find_library(METAL_LIBRARY Metal)
-    find_library(METAL_FOUNDATION Foundation)
-
     set(QtAVPlayer_SOURCES
         ${QtAVPlayer_SOURCES}
         qavhwdevice_videotoolbox.mm
-    )
-
-    set(QtAVPlayer_LIBS
-        ${QtAVPlayer_LIBS}
-        ${IOSURFACE_LIBRARY}
-        ${COREVIDEO_LIBRARY}
-        ${COREMEDIA_LIBRARY}
-        ${METAL_LIBRARY}
-        ${METAL_FOUNDATION}
     )
 endif()
 
@@ -236,13 +221,14 @@ add_library(QtAVPlayer STATIC
     ${QtAVPlayer_PRIVATE_HEADERS}
 )
 
-target_link_libraries(QtAVPlayer
+target_link_libraries(QtAVPlayer PUBLIC
     ${QT_VERSION_BASE}::Core
     ${QT_VERSION_BASE}::Gui
     ${QT_VERSION_BASE}::Multimedia
-    ${QT_VERSION_BASE}::Network
+    ${QT_VERSION_BASE}::MultimediaPrivate
     ${QT_VERSION_BASE}::Widgets
     ${FFMPEG_LIBRARIES}
+    ${QtAVPlayer_LIBS}
 )
 
 target_include_directories(QtAVPlayer
