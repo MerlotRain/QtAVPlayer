@@ -7,8 +7,8 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
-find_package(FFmpeg REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(ffmpeg REQUIRED IMPORTED_TARGET libavformat libavdevice libavcodec libavutil libavfilter libswscale libswresample) 
 
 set(BUILD_WITH_QT6 TRUE CACHE BOOL "Enable (experimental) Qt6 support")
 if(BUILD_WITH_QT6)
